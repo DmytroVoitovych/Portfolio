@@ -74,7 +74,8 @@
       "react-app",
       "react-app/jest"
     ],
-    "parser": "@babel/eslint-parser"
+    "parser": "jsx",
+     "parserOptions": { "babelOptions": { "presets": [ ["babel-preset-react-app", false] ] } }
   },
   "browserslist": {
     "production": [
