@@ -35,9 +35,9 @@ export const Header = () => {
                 </div>
                 <div style={{ display: 'flex', gap:'40px'}}>
                     <ListAbout>
-                        <li><a href="#"><Text>Home</Text></a></li>
-                        <li><a href="#"><Text>About</Text></a></li>
-                        <li><a href="#"><Text>Project</Text></a></li>
+                        <li><a href="#id"><Text>Home</Text></a></li>
+                        <li><a href="#id"><Text>About</Text></a></li>
+                        <li><a href="#id"><Text>Project</Text></a></li>
                     </ListAbout>
                     <Btn type='button'>Contact Me</Btn>
                 </div>

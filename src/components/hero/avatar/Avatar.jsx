@@ -1,10 +1,8 @@
 import { png, webp,old, Churd, Oval } from "../helpers/path";
-import { Ava, Box } from "./Avatar.styled";
-import { css, jsx } from "@emotion/react";
+import { Ava, Box, oval } from "./Avatar.styled";
 
-const a = css({
-    position: 'absolute'
-});
+
+
 
 
 
@@ -18,7 +16,7 @@ export const Avatar =  () => {
             <Ava src={png} alt="man" />
            </picture>
             <Box><Churd /><Churd /><Churd /></Box>
-            <Oval css={a}  />
+            <Oval css={oval}  />
             </>
     );
 

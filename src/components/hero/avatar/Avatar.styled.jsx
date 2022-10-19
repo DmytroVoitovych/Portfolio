@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { css } from '@emotion/react';
 
 export const Ava = styled.img`
 max-width: 506px;
@@ -17,4 +18,9 @@ export const Box = styled.div`
     justify-content: center;
     transform: rotate(90deg);
 
+`;
+
+export const oval = css`
+position:absolute;
+top:0;
 `;
