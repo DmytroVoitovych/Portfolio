@@ -22,5 +22,15 @@ export const Box = styled.div`
 
 export const oval = css`
 position:absolute;
-top:0;
+top:16px;
+max-width:100%;
+z-index:3;
+`;
+
+export const rotate = css`
+position:absolute;
+top:355px;
+max-width:100%;
+z-index:1;
+left: -32px;
 `;
