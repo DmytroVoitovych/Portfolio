@@ -123,5 +123,25 @@ border: 1px solid ${second_dark__whiteBd};
 }
 }
 `;
-    
-export {over, form, inputBox, logo, submit };
+
+const subDisabled = css`
+position: absolute;
+bottom: 24px;
+left: 50%;
+transform: translateX(-50%);
+
+border: 1px solid grey;
+padding: 8px 9px;
+
+font-family: 'Poppins', sans-serif;
+font-weight: 400;
+font-size: 19px;
+line-height: 1.2;
+color: ${main_dark__white};
+border-radius: 12px;
+
+background-color: grey;
+backdrop-filter: blur(10px);
+cursor:not-allowed;
+`;  
+export {over, form, inputBox, logo, submit , subDisabled};
