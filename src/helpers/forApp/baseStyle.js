@@ -8,10 +8,8 @@ const controlStyle = {
     color: '#010101',
     display: 'flex',
     flexDirection: 'column',
-    // height: '100vh',
     justifyContent: 'space-between',
     minHeight: '100vh'
-
 };
 
 export { controlStyle};

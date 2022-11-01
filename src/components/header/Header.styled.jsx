@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
-
-
+import { colorsFontsDark, colorsBackgroundDark, colorsBorderDark, cubik } from "helpers/styleTemplate";
+const { accent_dark__yellow, main_dark__white, support_dark__black, second_dark__grey } = colorsFontsDark;
+const { decor_dark__transparentBg, support_dark__yellovOpacityBg } = colorsBackgroundDark;
+const {main_dark__yellowBd, second_dark__whiteBd} = colorsBorderDark;
 
 export const Nav = styled.nav`  
 
@@ -16,7 +18,8 @@ font-family: 'Poppins', sans-serif;
 font-weight: 600;
 font-size: 20px;
 line-height: 1.5;
-color: #ffffff;
+color: ${main_dark__white};
+
 `;
 
 export const ListContact = styled.ul`
@@ -26,24 +29,31 @@ align-items: center;
 
 li:nth-of-type(3) svg{
     border-radius: inherit;
-    color: #000000;
-    outline: 1px solid #FBFF22;
+    color: ${support_dark__black};
+    outline: 1px solid ${accent_dark__yellow};
  }   
 
  li:nth-of-type(2) svg{
-    
-    color:#FBFF22;
+    color: ${accent_dark__yellow};
  } 
-
 `;
 
 export const LinkContact = styled.a`
 display:flex;
 padding:12px;
 border-radius: 50%;
-background-color: rgba(251, 255, 34, 0.1);
+background-color: ${support_dark__yellovOpacityBg};
+transition: background-color ${cubik}, outline ${cubik};
 
+:hover
+{
+ background-color: ${second_dark__grey};
+  outline: 3px solid ${main_dark__yellowBd};    
+}
 
+:hover  div{
+ outline: 3px solid ${main_dark__yellowBd};  
+}
 
 `;
 
@@ -51,16 +61,43 @@ export const ListAbout = styled.ul`
 display: flex;
 gap: 30px;
 align-items: center;
+
+a:hover p{
+ transition: color ${cubik},text-decoration ${cubik};
+ color:${accent_dark__yellow};
+ text-decoration: underline;   
+}
+
+a:focus  p{
+ transition: color ${cubik},text-decoration ${cubik};
+ color:${accent_dark__yellow};
+ text-decoration: underline;   
+}
 `;
 
 export const Btn = styled.button`
 padding: 15px;
-border: 2px solid #FBFF22;
+border: 2px solid ${main_dark__yellowBd};
 border-radius: 5px;
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
 font-size: 20px;
 line-height: 1.5;
-color: #FBFF22;
-background-color: transparent;
+color: ${accent_dark__yellow};
+background-color: ${decor_dark__transparentBg};
+cursor: pointer;
+transition: color ${cubik}, border ${cubik};
+
+:hover,
+:focus {
+color:${main_dark__white};
+border: 2px solid ${second_dark__whiteBd};
+transition: color ${cubik}, border ${cubik};
+
+:active{
+color:${accent_dark__yellow};
+border: 2px solid ${main_dark__yellowBd};    
+}
+}
 `;
+

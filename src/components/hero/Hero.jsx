@@ -9,7 +9,7 @@ export const Hero = () => {
         <HeroSection>
             <div>
                 <Hello>Hello!</Hello>
-                <Iam><span style={{ color: '#ffffff' }}>I’m</span> Dmytro Voitovych</Iam>
+                <Iam id='About'><span style={{ color: '#ffffff' }}>I’m</span> Dmytro Voitovych</Iam>
                 <Prof>Front-end developer</Prof>
                 <About >{subOne}<span style={{ display: 'block' }}></span>{subTwo}</About>
                 <ul style={{display:'flex', gap:'30px'}}>

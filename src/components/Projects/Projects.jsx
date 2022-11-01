@@ -8,7 +8,7 @@ export const Project = () => {
     return (
         <section >
             <div style={{position:'relative', marginBottom:'66px'}}>
-                <Title>MY PROJECT</Title>
+                <Title id='Project'>MY PROJECT</Title>
                 <Desc>MY PROJECTS</Desc>
             </div>
             <InfoBox>

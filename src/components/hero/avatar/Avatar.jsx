@@ -4,7 +4,7 @@ import { Ava, Box, oval, rotate } from "./Avatar.styled";
 
 
 export const Avatar =  () => {
-  
+  console.log(png);
     return (
        <>
         <picture style={{position:'relative', zIndex:2}}>
