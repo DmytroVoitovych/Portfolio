@@ -9,7 +9,7 @@ import { joberValid, nameValid, messageValid } from './validation';
 import { memo } from 'react';
 import axios from 'axios';
 
-const {REACT_APP_API_URL} = process.env;
+// const {REACT_APP_API_URL} = process.env;
 
 const modal = document.querySelector('#modal');
 const state = window.localStorage.getItem('stateModal');
