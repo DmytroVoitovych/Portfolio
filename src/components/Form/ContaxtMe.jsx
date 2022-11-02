@@ -22,7 +22,7 @@ export const ContactMe = memo(({ onClose, toggle }) => {
     const funcSubmit = async (data) => {
         
         try {
-            await axios.post(REACT_APP_API_URL,data);
+            await axios.post('https://backend-for-portfolio-mailer.herokuapp.com/api/gmail',data);
             reset();
         }
         catch(err){
