@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
+import exit from '../../sound/exit.mp3';
+const audio = new Audio(exit);
 
 export const useTimeout = (toggle, time, onClose) => {
  
@@ -11,7 +13,8 @@ const [top, setTop] = useState(100);
    
 const funcKeyDown = useCallback((e) => {
     if (e.code === 'Escape') {
- 
+        
+        audio.play();
         window.localStorage.removeItem('stateModal');
         setChange(true);
        
