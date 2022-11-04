@@ -11,7 +11,7 @@ const {accent_dark__yellow } = colorsFontsDark;
 export const Header = ({onOpen}) => {
     
 const audio = new Audio(mus);
-console.log(audio);
+
     return (
         <header>
             <Nav>

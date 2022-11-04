@@ -7,34 +7,20 @@ import { funcClickBackdrop } from './funcClickBackdrop';
 import { onError } from './onError';
 import { joberValid, nameValid, messageValid } from './validation';
 import { memo } from 'react';
-import axios from 'axios';
-
-const {REACT_APP_API_URL} = process.env;
+import { funcSubmit } from './funcSubmit';
 
 const modal = document.querySelector('#modal');
-const state = window.localStorage.getItem('stateModal');
 
 export const ContactMe = memo(({ onClose, toggle }) => {
-    
-    const { register, formState: { errors}, handleSubmit, reset } = useForm();
+    const state = window.localStorage.getItem('stateModal');
+   
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [opacity, top, setChange,] = useTimeout(toggle, 1.5, onClose);
-    
-    const funcSubmit = async (data) => {
-        
-        try {
-            await axios.post(REACT_APP_API_URL,data);
-            reset();
-        }
-        catch(err){
-            console.log(err);
-        }
-    
-    };
    
        
     return createPortal(
-        <div css={css`${over} top: ${state ? 0 : top}vh; opacity: ${state ? 1 : opacity};`} onClick={(e) => funcClickBackdrop(e, setChange, onClose)} >
-            <form action="" css={form} onSubmit={handleSubmit(funcSubmit, onError)}>
+        <div css={css`${over}  top: ${state?0:top}vh; opacity: ${state?1:opacity};`} onClick={(e) => funcClickBackdrop(e, setChange, onClose)} >
+            <form action="" css={form} onSubmit={handleSubmit((data)=>funcSubmit(data,onClose,setChange,reset), onError)}>
                 <div css={logo}>
                     <span>FeedBack</span>
                 </div>
