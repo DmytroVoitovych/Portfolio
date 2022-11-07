@@ -11,4 +11,8 @@ const subOne = aboutMe.slice(0, index);
 const subTwo = aboutMe.slice(index);
 const linkResume = 'https://drive.google.com/file/d/1EHzLZAhZ12UxDCn4sMabCXPj3fH2iAUL/view?usp=sharing' ;
 
-export {subOne, subTwo, linkResume };
+const nodeDesc = 'Apart from the fact that I am applying for a job as a frontend developer, I am ready to consider working as a backend developer, because I have experience with Node.js and Mongo DB. ';
+
+
+
+export {subOne, subTwo, linkResume, nodeDesc };

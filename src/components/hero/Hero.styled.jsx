@@ -1,5 +1,9 @@
 import styled  from "@emotion/styled";
 
+import { colorsFontsDark, colorsBorderDark, cubik } from "helpers/styleTemplate";
+const { accent_dark__yellow, main_dark__white} = colorsFontsDark;
+const {main_dark__yellowBd, second_dark__whiteBd} = colorsBorderDark;
+
 export const HeroSection = styled.section`
 display: flex;
 justify-content: space-between;
@@ -73,6 +77,16 @@ color: #000000;
 padding: 15px 20px;
 background: #FBFF22;
 border-radius: 5px;
+transition: color ${cubik}, border ${cubik}, background-color ${cubik} ;
+
+:hover,
+:focus {
+color:${accent_dark__yellow};
+background-color: ${main_dark__white};
+border: 2px solid ${main_dark__yellowBd};
+}
+
+
 
 `;
 
@@ -87,5 +101,19 @@ font-size: 20px;
 line-height: 1.5;
 color: #ffffff;
 background-color: transparent;
+transition: color ${cubik}, border ${cubik};
 cursor: pointer;
+
+
+:hover,
+:focus {
+color:${accent_dark__yellow};
+border: 2px solid ${main_dark__yellowBd};
+
+}
+
+:active{
+ color:${main_dark__white};
+border: 2px solid ${second_dark__whiteBd};   
+}
 `;

@@ -7,9 +7,7 @@ export const useTimeout = (toggle, time, onClose) => {
 const [change, setChange] = useState(false);
 const [opacity, setOpacity] = useState(0);
 const [top, setTop] = useState(100);
-
     
-// useEffect(() => { window.localStorage.setItem('statePosition', JSON.stringify({change,opacity,top}));} , [change,opacity,top]);
    
 const funcKeyDown = useCallback((e) => {
     if (e.code === 'Escape') {
