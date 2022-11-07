@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.80d11fc7.css",
-    "main.js": "/static/js/main.2648ceb3.js",
+    "main.js": "/static/js/main.78116060.js",
+    "static/media/png.png": "/static/media/png.a775e9950fe16b147e29.png",
     "static/media/overlay.jpg": "/static/media/overlay.8a5f19f54514ba755a57.jpg",
     "static/media/avatar.png": "/static/media/avatar.6b0cadd4eb13c80f7dd0.png",
-    "static/media/png.png": "/static/media/png.0e83b5f1d03a8902c66a.png",
     "static/media/filmoteka.jpg": "/static/media/filmoteka.3d22a8b81c5c6bbf349b.jpg",
     "static/media/filmotekawbp.webp": "/static/media/filmotekawbp.37117cb1bd2c4df7afda.webp",
     "static/media/iceCream.jpg": "/static/media/iceCream.6b330042421e4655431f.jpg",
-    "static/media/webp.webp": "/static/media/webp.2d39aaad923b8b29dbdb.webp",
+    "static/media/webp.webp": "/static/media/webp.a06053bd6c62167bc1f9.webp",
     "static/media/webStudio.jpg": "/static/media/webStudio.c9dc5c7f75d83a96705c.jpg",
     "static/media/iceCreamwbp.webp": "/static/media/iceCreamwbp.0bf5fa458456878a96d8.webp",
     "static/media/phonebook.jpg": "/static/media/phonebook.7fc827f41cd304221580.jpg",
@@ -21,10 +21,10 @@
     "static/media/oval.svg": "/static/media/oval.eb1caafd5cee1896641a6dd6d8cad280.svg",
     "static/media/churd.svg": "/static/media/churd.634c219245a8e3bfb6d4c19ebb99cffc.svg",
     "main.80d11fc7.css.map": "/static/css/main.80d11fc7.css.map",
-    "main.2648ceb3.js.map": "/static/js/main.2648ceb3.js.map"
+    "main.78116060.js.map": "/static/js/main.78116060.js.map"
   },
   "entrypoints": [
     "static/css/main.80d11fc7.css",
-    "static/js/main.2648ceb3.js"
+    "static/js/main.78116060.js"
   ]
 }
