@@ -1,85 +1,57 @@
-import { jpgStudio, webpStudio, jpgTeam, webpTteam, jpgFilm, webpFilm, jpgPhonebook, webpPhonebook} from "./path";
+import { useState, memo } from "react";
+import { Details } from "./Details";
+import { flexProj, funcHover, funcGetInfo } from "./renderProj";
 
 
-export const Info = () => {
-    
-    return (
 
-        <>
-            <picture>
-                <source srcSet={`${webpStudio} 1x`} type="image/webp" />
-            <source srcSet={`${jpgStudio} 1x`} type="image/jpg" />
-                <img src={jpgStudio} alt="office and humans" />
-        </picture>
+export const Info = memo(({length}) => {
+    const [hover, setHover] = useState(false);
+   
+     const arrVisible = flexProj.filter((_, index) => index <= length);    
+
+
+    return arrVisible.map(({ typejpg, typewebp, accent, desc, video, styleImg, styleVid, styleInfo, info, linklive, linkrep }, index) =>
+        <li key={index}>
+            <div   >
+                <Details live={linklive} rep={linkrep} styleInfo={styleInfo} info={info} />
+               
+                <picture onMouseEnter={() => { setHover(true); funcHover(hover, index); }} >
+                    <source srcSet={`${typewebp} 1x`} type="image/webp" />
+                    <source srcSet={`${typejpg} 1x`} type="image/jpg" />
+                    <img
+                        style={{ display: `${styleImg}` }}
+                        src={typejpg}
+                        alt="office and humans"
+                    />
+                </picture>
+                 
+                <div>
+                     
+                    <video
+                
+                        style={{ display: `${styleVid}` }}
+                        onMouseLeave={() => { setHover(false); funcHover(hover, index); }}
+                        id={index}
+                        autoPlay muted loop
+                        src={video}
+                        itemType='video/mp4'
+                    />
+                </div>
+                
+                
+            </div>
+            
             <div>
-                <p><span>Web</span>Studio Page Layout</p>
-                <button>View Details</button>
-        </div>
-        </>
-
+                <p><span>{accent}</span>{desc}</p>
+                <button
+                    onClick={funcGetInfo}
+                    type="button">
+                    View Details
+                </button>
+            </div>
+        </li>
+    
     );
 
-};
+});
 
-export const Info2 = () => {
-    
-    return (
-
-        <>
-           <picture>
-                <source srcSet={`${webpTteam} 1x`} type="image/webp" />
-                <source srcSet={`${jpgTeam} 1x`} type="image/jpg" />
-                <img src={jpgTeam} alt="office and humans" />
-        </picture>
-            <div>
-                <p><span>Team</span>Work Page Layout</p>
-                <button>View Details</button>
-        </div>
-        </>
-
-    );
-
-};
-
-export const Info3 = () => {
-    
-    return (
-
-        <>
-            <picture>
-                <source srcSet={`${webpFilm} 1x`} type="image/webp" />
-            <source srcSet={`${jpgFilm} 1x`} type="image/jpg" />
-                <img src={jpgFilm} alt="office and humans" />
-        </picture>
-            <div>
-                <p><span>Filmo</span>Teka JS Project</p>
-                <button>View Details</button>
-        </div>
-        </>
-
-    );
-
-};
-
-export const Info4 = () => {
-    
-    return (
-
-        <>
-            <picture>
-                <source srcSet={`${webpPhonebook} 1x`} type="image/webp" />
-            <source srcSet={`${jpgPhonebook} 1x`} type="image/jpg" />
-                <img src={jpgPhonebook} alt="office and humans" />
-        </picture>
-            <div>
-                <p><span>Phone</span>Book React Auth</p>
-                <button>View Details</button>
-        </div>
-        </>
-
-    );
-
-};
-
-
-export const infoComponents = [<Info/>,<Info2/>,<Info3/>,<Info4/>];

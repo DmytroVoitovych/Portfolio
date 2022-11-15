@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import styled  from "@emotion/styled";
 
 
@@ -43,6 +44,8 @@ border-radius: 20px;
 background-color: #131313;
 gap: 30px;
 
+
+
 p{
 font-family: 'Poppins',sans-serif;
 font-weight: 600;
@@ -68,6 +71,17 @@ font-size: 20px;
 line-height: 1.5;
 border: none;
 cursor: pointer;
+transition: 250ms cubic-bezier(.36,.97,.76,.18);
+
+:hover,:focus{
+outline: 1px solid #FBFF22;
+color: #FBFF22;
+background-color: rgba(153, 153, 153, 0.3);
+}
+
+:active{
+ background-color: #ffffff; 
+}
 }
 
 img{
@@ -76,15 +90,34 @@ img{
     width:631px;
     max-height: 323px;
     min-height: 323px;
+
+    
+}
+
+div:first-child{
+   border-radius:5px;
+   max-height: 323px;
+   height: 323px;
+  
+
+ video{
+    display:none;
+    max-width:100%;
+    width:631px;
+    border-radius:5px;
+   width:631px;
+   object-fit: cover;
+   min-height: 323px;
+ }
+
 }
 
 div{
 text-align:start;
-   
-}
 }
 
 
+}
 `;
 
 export const See = styled.button`
@@ -102,4 +135,56 @@ font-size: 20px;
 line-height: 1.5;
 border: none;
 cursor: pointer;
+
+:hover,:focus{
+outline: 1px solid #FBFF22;
+color: #FBFF22;
+background-color: rgba(153, 153, 153, 0.3);
+}
+
+:active{
+ background-color: #ffffff; 
+}
+`;
+
+export const inf = css`
+width:631px;
+max-width:100%;
+
+font-family: 'Poppins',sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+    color: #999999;
+
+`;
+
+
+export const Block = styled.div`
+display:block;
+height: auto!important;
+
+`;
+
+export const olList = css`
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: start;
+    margin-top: 14px;
+
+ol{
+  padding:0;
+  display:flex;
+  align-items: center;
+  max-width: 200px;
+  width:100%;
+  justify-content: space-between;
+  
+  span{
+    color:#FBFF22;
+  }
+}
+
 `;
