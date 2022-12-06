@@ -2,12 +2,13 @@ import { useState, useEffect, useCallback } from 'react';
 import exit from '../../sound/exit.mp3';
 const audio = new Audio(exit);
 
-export const useTimeout = (toggle, time, onClose) => {
+export const useTimeout = (toggle, time, onClose, setSt, st, s) => {
  
 const [change, setChange] = useState(false);
 const [opacity, setOpacity] = useState(0);
 const [top, setTop] = useState(100);
-    
+
+ 
    
 const funcKeyDown = useCallback((e) => {
     if (e.code === 'Escape') {
@@ -33,11 +34,12 @@ const funcKeyDown = useCallback((e) => {
    
 
  useEffect( () => {
+      
      
-     
-     const idStart = setTimeout( () => {
-         
-             if (toggle) {
+     const idStart = setTimeout(() => {
+       
+         if (toggle) {
+            
                  opacity <= 1 && setOpacity(opacity + 0.01);
                  top !== 0 && setTop(top - 1);
              }

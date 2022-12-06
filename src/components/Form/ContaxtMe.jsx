@@ -8,18 +8,17 @@ import { onError } from './onError';
 import { joberValid, nameValid, messageValid } from './validation';
 import { memo } from 'react';
 import { funcSubmit } from './funcSubmit';
-
 const modal = document.querySelector('#modal');
 
-export const ContactMe = memo(({ onClose, toggle }) => {
+export const ContactMe = memo(({ onClose, toggle, setSt, st, s}) => {
     const state = window.localStorage.getItem('stateModal');
    
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const [opacity, top, setChange,] = useTimeout(toggle, 1.5, onClose);
+    const [opacity, top, setChange,] = useTimeout(toggle, 1.5, onClose, setSt, st, s);
    
        
     return createPortal(
-        <div css={css`${over}  top: ${state?0:top}vh; opacity: ${state?1:opacity};`} onClick={(e) => funcClickBackdrop(e, setChange, onClose)} >
+        <div css={css`${over}  top: ${state?0:top}vh; opacity: ${state?1:opacity};`} onClick={(e) => funcClickBackdrop(e, setChange, onClose,s)} >
             <form action="" css={form} onSubmit={handleSubmit((data)=>funcSubmit(data,onClose,setChange,reset), onError)}>
                 <div css={logo}>
                     <span>FeedBack</span>

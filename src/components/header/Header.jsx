@@ -5,12 +5,13 @@ import { IconContext } from 'react-icons';
 import { ImTelegram } from 'react-icons/im';
 import{TfiLinkedin} from 'react-icons/tfi';
 import mus from '../../sound/put.mp3';
+import { animateScroll as scroll } from 'react-scroll'
 
 const {accent_dark__yellow } = colorsFontsDark;
 
-export const Header = ({onOpen}) => {
+export const Header = ({ onOpen, setScroll, loc }) => {
     
-const audio = new Audio(mus);
+    const audio = new Audio(mus);
 
     return (
         <header>
@@ -36,13 +37,13 @@ const audio = new Audio(mus);
                         </ListContact>
                     </IconContext.Provider>
                 </div>
-                <div style={{ display: 'flex', gap:'40px'}}>
+                <div style={{ display: 'flex', gap: '40px' }}>
                     <ListAbout>
                         <li><a href="#id"><Text>Home</Text></a></li>
-                        <li><a href="#About"><Text>About</Text></a></li>
-                        <li><a href="#Project"><Text>Project</Text></a></li>
+                        <li><a href="#About" onClick={() => scroll.scrollTo(loc.refAbout, { smoth: true })}><Text>About</Text></a></li>
+                        <li><a href="#Project" onClick={() => scroll.scrollTo(loc.refProj, { smoth: true })}><Text>Project</Text></a></li>
                     </ListAbout>
-                    <Btn type='button' onClick={() => { audio.play(); return onOpen(true); } }>Contact Me</Btn>
+                    <Btn type='button' onClick={() => { setScroll(window.scrollY); audio.play(); return onOpen(true); }}>Contact Me</Btn>
                 </div>
             </Nav>
         </header>

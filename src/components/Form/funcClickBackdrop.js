@@ -6,7 +6,7 @@ export const funcClickBackdrop =  (e, setChange, onClose) => {
     if (e.target === e.currentTarget) {
         audio.play();
         funcClickSuccess(onClose,setChange);
-                        
+               
     }
    
         
