@@ -89,6 +89,10 @@ color: rgba(255, 255, 255, 0.62);
 
 }
 
+@media (max-height: 600px), screen and (orientation: portrait) {
+ margin-bottom: 15px;
+}
+
 `;
 
 const submit = css`
@@ -143,5 +147,33 @@ border-radius: 12px;
 background-color: grey;
 backdrop-filter: blur(10px);
 cursor:not-allowed;
-`;  
-export {over, form, inputBox, logo, submit , subDisabled};
+`; 
+
+const mobForm = css`
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+transform: translate(0,0);
+place-items: center;
+display: grid;
+`;
+
+const menu = css`
+fill: ${accent_dark__yellow};
+z-index: 9999;
+cursor: pointer;
+
+:active{
+ fill: ${main_dark__white};  
+}
+`;
+
+
+const dow = css`
+position: fixed;
+    top: 20px;
+    right: 30px;
+`;
+
+export {over, form, inputBox, logo, submit , subDisabled, mobForm, menu, dow};

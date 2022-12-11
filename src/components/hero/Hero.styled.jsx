@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import styled  from "@emotion/styled";
 
 import { colorsFontsDark, colorsBorderDark, cubik } from "helpers/styleTemplate";
@@ -31,6 +32,10 @@ font-size: 52px;
 line-height: 1.5;
 margin-bottom: 10px;
 color: #FBFF22;
+
+ @media (max-width: 480px){
+font-size: 42px;
+}
 `;
 
 export const Prof = styled.span`
@@ -49,6 +54,10 @@ color: #999999;
     background-color: #999999;
     margin-top: 35px;
     margin-bottom: 20px;
+
+     @media (max-width: 480px){
+width:100%;
+}
 }
 
 `;
@@ -116,4 +125,43 @@ border: 2px solid ${main_dark__yellowBd};
  color:${main_dark__white};
 border: 2px solid ${second_dark__whiteBd};   
 }
+`;
+
+export const descSmall = css`
+
+max-width: 450px;
+z-index: 3;
+position: relative;
+font-size:  17px;
+
+`;
+
+export const tabletHero = css`
+
+   
+    align-items: center;
+    gap: 15px;
+    padding-top: 0;
+
+picture img{
+max-width: 370px;    
+}
+
+.css-1tmajv6-oval{
+ top: -60px;   
+}
+
+button{
+ font-size:18px;   
+}
+a{
+ font-size:18px;   
+}
+
+`;
+
+export const end = css`
+
+display: block;
+    text-align: center;
 `;

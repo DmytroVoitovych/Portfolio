@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import exit from '../../sound/exit.mp3';
 const audio = new Audio(exit);
 
-export const useTimeout = (toggle, time, onClose, setSt, st, s) => {
+export const useTimeout = (toggle, time, onClose) => {
  
 const [change, setChange] = useState(false);
 const [opacity, setOpacity] = useState(0);

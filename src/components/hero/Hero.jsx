@@ -1,31 +1,37 @@
 import {subOne,subTwo,linkResume, nodeDesc } from "./helpers/description";
-import { HeroSection, Hello, Iam, Prof, About, LinkHero, BtnHero } from "./Hero.styled";
+import { HeroSection, Hello, Iam, Prof, About, LinkHero, BtnHero, descSmall, tabletHero, end } from "./Hero.styled";
 import { Avatar } from "./avatar/Avatar";
 import { Subtract } from "./customSymbols/Subtract";
 import { useRef, useState } from "react";
 import { useEffect } from "react";
 
 
-export const Hero = ({about}) => {
-
+export const Hero = ({about, media}) => {
+    
+    const {burger, all, tablet, isMobile } = media;
     const [more, setMore] = useState(false);   
     const locate = useRef(null);
-   
+    
     useEffect(()=>
     about(locate.current.offsetTop)
     );
 
     return (
-        <HeroSection>
-            <div>
+        <HeroSection
+            style={{ gap: ((!burger && !all) || isMobile) && '1px', justifyContent: (!burger && !all) && 'space-evenly',  flexDirection: burger && 'column-reverse' }}
+            css={(!isMobile && burger) && tabletHero}
+        >
+            <div style={{textAlign: isMobile && "center"}}>
                 <Hello>Hello!</Hello>
-                <Iam ref={locate} id='About'><span style={{ color: '#ffffff' }}>I’m</span> Dmytro Voitovych</Iam>
-                <Prof>Front-end developer</Prof>
-                <About style={{overflowY: `${more && 'auto'}`}}>
+                <Iam ref={locate} style={{fontSize: (!burger && !all) && '36px' }} id='About'>
+                    <span style={{ color: '#ffffff',}}>I’m</span> Dmytro Voitovych
+                </Iam>
+                <Prof style={{fontSize: (!burger && !all) && '28px' }}>Front-end developer</Prof>
+                <About style={{overflowY: `${more && 'auto'}`}}  css={(!burger && !all) &&  descSmall} >
                     {subOne}<span style={{ display: 'block',}}></span>{subTwo}
-                    {more && <p style={{marginTop:'20px'}} ><Prof>Back-end developer</Prof>{nodeDesc}</p>}
+                    {more && <p style={{marginTop:'20px'}} ><Prof css={ isMobile && end}>Back-end developer</Prof>{nodeDesc}</p>}
                 </About>
-                <ul style={{display:'flex', gap:'30px'}}>
+                <ul style={{display:'flex', gap: tablet?'10px':'30px', flexDirection: isMobile && "column", alignItems: isMobile && "center"} }>
                     <li>
                         <LinkHero
                             href={linkResume}
@@ -47,7 +53,7 @@ export const Hero = ({about}) => {
             </div>
             
             <div style={{position:'relative'}}>
-                <Avatar />
+                <Avatar media={{burger, all, tablet, isMobile}} />
              </div>
 
 

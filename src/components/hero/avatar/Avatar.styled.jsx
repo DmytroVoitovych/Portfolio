@@ -25,6 +25,11 @@ position:absolute;
 top:16px;
 max-width:100%;
 z-index:3;
+
+ @media (max-width: 480px){
+top:0;
+}
+
 `;
 
 export const rotate = css`

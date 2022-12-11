@@ -3,24 +3,26 @@ import { Info } from "./Infobox/Info";
 import { Title, Desc,InfoBox, See } from "./Projects.styled";
 import { flexProj} from "./Infobox/renderProj";
 
-export const Project = ({proj}) => {
+export const Project = ({proj, media}) => {
 
-    const [actual, setActual] = useState(3);    
+    const [actual, setActual] = useState(3); 
+    const {all} = media;
     const fact = flexProj.length;
     
     const locate = useRef(null);
    
     useEffect(()=>proj(locate.current.offsetParent.offsetTop));
-
+      console.log(all);
     return (
         <section >
             <div style={{position:'relative', marginBottom:'66px'}}>
                 <Title
                     id='Project'
                     ref={locate}
+                    style={{fontSize: !all && '12vw'}}
                 >MY PROJECT
                 </Title>
-                <Desc>MY PROJECTS</Desc>
+                <Desc style={{fontSize: !all && '4vw'}}>MY PROJECTS</Desc>
             </div>
             <InfoBox>
                     <Info  length={actual} />
