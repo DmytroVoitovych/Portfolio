@@ -2,7 +2,7 @@ import { proj } from "./fakeback";
 
 export const flexProj = [...proj];
 
-export const funcHover = (hover, index) => {
+export const funcHover = (hover, index, i) => {
  
     if (!hover) {
        
@@ -10,18 +10,19 @@ export const funcHover = (hover, index) => {
         flexProj[index].styleVid = 'block';
         
     }
-    
+   
+
     else {
         
             proj[index].styleImg = 'block';
             proj[index].styleVid = 'none';
-        
-          
+                      
     }
 
 
 
 };
+
 
 
 export const funcGetInfo = (e) => {
