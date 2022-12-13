@@ -42,7 +42,7 @@ export const App = () => {
       <main>
           <Hero about={setAbout}  media={{ burger, isMobile, tablet,all }} />
           <Project proj={setProj} media={{ burger, isMobile, tablet,all, desctop }} />
-          <Write onClose={funcToglle} toggle={showModal} setScroll={setLocation} />
+          <Write onClose={funcToglle} toggle={showModal} setScroll={setLocation} media={{ burger, isMobile, tablet,all, desctop }} />
         </main>
         <Footer/>
         {showModal && <ContactMe onClose={funcToglle} toggle={showModal} media={{ burger, isMobile, tablet,}} />}
