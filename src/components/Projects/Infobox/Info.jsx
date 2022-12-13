@@ -50,7 +50,7 @@ export const Info = memo(({length, media}) => {
                         autoPlay muted loop
                         src={video}
                         itemType='video/mp4'
-                        css={(!desctop && !all) && lanccape}
+                        css={(!all) && lanccape}
                     />
                 </div>
           </div>
