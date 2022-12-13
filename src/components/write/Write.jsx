@@ -15,7 +15,7 @@ export const Write = ({onClose, toggle,setScroll, media}) => {
                 <Title css={size} style={{fontSize: !all && '14vw' }} >SAY HI</Title>
                 <div css={box}>
                     <p css={fill} style={{ fontSize: !all && '3vw' }}  >Say Hi! and let’s create something together.</p>
-                    <Btn type='button' 
+                    <Btn type='button' style={{ fontSize: isMobile && '14px'}} 
                         onClick={(e) => {
                         setScroll(window.scrollY);
                         onClose(!toggle);
