@@ -9,7 +9,7 @@ import { useInView } from 'react-intersection-observer';
 
 export const App = () => {
   
-  const { burger, isMobile, tablet,all, desctop } = useMedia();
+  const { burger, isMobile, tablet,all, desctop, extra } = useMedia();
   const [showModal, setShowModal] = useState(() => JSON.parse(window.localStorage.getItem('stateModal')) ?? false);
   const [location, setLocation] = useState(null);
   const [refAbout, setAbout] = useState(null);
@@ -45,7 +45,7 @@ export const App = () => {
           <Write onClose={funcToglle} toggle={showModal} setScroll={setLocation} media={{ burger, isMobile, tablet,all, desctop }} />
         </main>
         <Footer/>
-        {showModal && <ContactMe onClose={funcToglle} toggle={showModal} media={{ burger, isMobile, tablet,}} />}
+        {showModal && <ContactMe onClose={funcToglle} toggle={showModal} media={{ burger, isMobile, tablet, extra}} />}
         {< BtnUandD /> }
       </div>
       

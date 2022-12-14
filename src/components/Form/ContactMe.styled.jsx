@@ -157,6 +157,13 @@ right: 0;
 transform: translate(0,0);
 place-items: center;
 display: grid;
+
+@media (max-height: 540px) and (orientation: landscape) {
+ display: flex;
+ align-items: center;
+ position: relative;
+}
+
 `;
 
 const menu = css`
@@ -176,4 +183,31 @@ position: fixed;
     right: 30px;
 `;
 
-export {over, form, inputBox, logo, submit , subDisabled, mobForm, menu, dow};
+const mobExta = css`
+
+
+@media (max-height: 540px) and (orientation: landscape) {
+ display: flex;
+ align-items: center;
+ position: relative;
+justify-content: space-evenly;
+height:100vh;
+padding: 0;
+top:0;
+left:0;
+transform: none;
+
+div{
+    margin:0;
+}
+
+
+ button{
+  position: static;
+  transform: none;
+}
+}
+
+`;
+
+export {over, form, inputBox, logo, submit , subDisabled, mobForm, menu, dow, mobExta};

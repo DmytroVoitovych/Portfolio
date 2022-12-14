@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { createPortal } from "react-dom";
-import { over, form, inputBox, logo, submit, subDisabled, mobForm, menu, dow } from './ContactMe.styled';
+import { over, form, inputBox, logo, submit, subDisabled, mobForm, menu, dow, mobExta } from './ContactMe.styled';
 import { css } from '@emotion/react';
 import { useTimeout } from 'helpers/customHook/useTimeout';
 import { funcClickBackdrop } from './funcClickBackdrop';
@@ -17,11 +17,11 @@ export const ContactMe = memo(({ onClose, toggle, media}) => {
    
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [opacity, top, setChange,] = useTimeout(toggle, 1.5, onClose);
-    const { tablet, isMobile } = media;;
+    const { tablet, isMobile, extra } = media;;
        
     return createPortal(
         <div css={css`${over}  top: ${state?0:top}vh; opacity: ${state?1:opacity};`} onClick={(e) => funcClickBackdrop(e, setChange, onClose)} >
-            <form action="" css={[form, isMobile && mobForm]} onSubmit={handleSubmit((data)=>funcSubmit(data,onClose,setChange,reset), onError)}>
+            <form action="" css={[form, isMobile && mobForm, extra && mobExta]} onSubmit={handleSubmit((data)=>funcSubmit(data,onClose,setChange,reset), onError)}>
                 <div css={logo}>
                     <span>FeedBack</span>
                 </div>
@@ -37,6 +37,7 @@ export const ContactMe = memo(({ onClose, toggle, media}) => {
                     <textarea   {...register('message', messageValid)} cols="30" rows="10" placeholder='Your message to me:' ></textarea>
                 </div>
                 <button
+                    style={{position: isMobile && 'static', transform: isMobile && 'none'}}
                     css={errors?.name || errors?.jober || errors?.message ? subDisabled : submit}
                     type='submit'
                     disabled={errors?.name || errors?.jober || errors?.message ? true : false}
@@ -48,7 +49,7 @@ export const ContactMe = memo(({ onClose, toggle, media}) => {
             
             </form>
             
-            {isMobile && toggle && <AiFillCloseCircle size='30px'  css={[menu,dow]} onClick={()=>funcClickSuccess(onClose,setChange)}  />}
+            {(isMobile || extra) && toggle && <AiFillCloseCircle size='30px'  css={[menu,dow]} onClick={()=>funcClickSuccess(onClose,setChange)}  />}
         </div>, modal);
 
 });

@@ -29,7 +29,7 @@ export const Hero = ({about, media}) => {
                 <Prof style={{fontSize: (!burger && !all) && '28px' }}>Front-end developer</Prof>
                 <About style={{overflowY: `${more && 'auto'}`}}  css={(!burger && !all) &&  descSmall} >
                     {subOne}<span style={{ display: 'block',}}></span>{subTwo}
-                    {more && <p style={{marginTop:'20px'}} ><Prof css={ isMobile && end}>Back-end developer</Prof>{nodeDesc}</p>}
+                    {more && <span style={{marginTop:'20px', display:'block'}} ><Prof css={ isMobile && end}>Back-end developer</Prof>{nodeDesc}</span>}
                 </About>
                 <ul style={{display:'flex', gap: tablet?'10px':'30px', flexDirection: isMobile && "column", alignItems: isMobile && "center"} }>
                     <li>

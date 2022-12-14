@@ -94,7 +94,7 @@ img{
     
 }
 
-div:first-child{
+div:first-of-type{
    border-radius:5px;
    max-height: 323px;
    height: 323px;

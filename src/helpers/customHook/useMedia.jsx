@@ -7,6 +7,7 @@ const  query = [
     '(min-width: 768px) and (max-width: 1279.5px)',
     '(min-width: 1279.5px)',
     '(max-width: 912px)',
+    '(max-height: 540px)'
 ];
 
 
@@ -26,5 +27,5 @@ export const useMedia = () => {
 
     });
 
-    return ['isMobile', 'tablet', 'desctop','all','burger'].reduce((acc, screen, index)=>({...acc, [screen]: val[index]}),{});
+    return ['isMobile', 'tablet', 'desctop','all','burger','extra'].reduce((acc, screen, index)=>({...acc, [screen]: val[index]}),{});
 };
