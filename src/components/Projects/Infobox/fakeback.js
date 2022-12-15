@@ -68,7 +68,7 @@ export const proj = [
         styleVid: 'none',
         styleInfo: 'none',
         info: usd,
-        linklive:'https://currencyexchangetest.herokuapp.com/',
+        linklive:'https://back-currency.onrender.com/',
         linkrep:'https://github.com/DmytroVoitovych/currencyTest'   
     }
 ];
