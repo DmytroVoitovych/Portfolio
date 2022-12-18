@@ -1,12 +1,13 @@
+
 import { Block, Report } from 'notiflix';
 import { optLoader } from './optionLoader';
 import { funcClickSuccess } from './funcClickSuccess';
 import axios from 'axios';
 const {REACT_APP_API_URL} = process.env;
 
-export const funcSubmit = async (data, onClose, setChange, reset) => {
+export const funcSubmit = async (data, onClose, setChange, reset,r) => {
    
-        Block.dots(`.css-1w6kkf8`, 'The form is being submitted...', optLoader );
+        Block.dots(`.${r.current?.className}`, 'The form is being submitted...', optLoader );
    
     try {
             await axios.post(REACT_APP_API_URL,data);
@@ -19,6 +20,6 @@ export const funcSubmit = async (data, onClose, setChange, reset) => {
              Report.failure('Error',`${err}`);
         }
         finally {
-           Block.remove(`.css-1w6kkf8`); 
+           Block.remove(`.${r.current?.className}`); 
         }
     };

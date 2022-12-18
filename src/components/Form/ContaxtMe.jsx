@@ -10,18 +10,20 @@ import { memo } from 'react';
 import { funcSubmit } from './funcSubmit';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { funcClickSuccess } from './funcClickSuccess';
+import { useRef } from 'react';
 const modal = document.querySelector('#modal');
 
 export const ContactMe = memo(({ onClose, toggle, media}) => {
     const state = window.localStorage.getItem('stateModal');
    
+    const r = useRef();
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [opacity, top, setChange,] = useTimeout(toggle, 1.5, onClose);
     const { tablet, isMobile, extra } = media;;
        
     return createPortal(
         <div css={css`${over}  top: ${state?0:top}vh; opacity: ${state?1:opacity};`} onClick={(e) => funcClickBackdrop(e, setChange, onClose)} >
-            <form action="" css={[form, isMobile && mobForm, extra && mobExta]} onSubmit={handleSubmit((data)=>funcSubmit(data,onClose,setChange,reset), onError)}>
+            <form ref={r} action="" css={[form, isMobile && mobForm, extra && mobExta]} onSubmit={handleSubmit((data)=>funcSubmit(data,onClose,setChange,reset,r), onError)}>
                 <div css={logo}>
                     <span>FeedBack</span>
                 </div>
