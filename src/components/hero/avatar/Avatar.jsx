@@ -7,7 +7,7 @@ import { useSize } from "helpers/customHook/useSize";
 
 export const Avatar = ({media}) => {
   const [hover, setHover] = useState(false); 
-  const {burger, all,isMobile } = media;
+  const {burger, all, isMobile } = media;
   
   const maxwid = useRef(null); 
   const size = useSize(maxwid)
@@ -18,7 +18,7 @@ export const Avatar = ({media}) => {
             <source srcSet={`${webp} 1x`} type="image/webp" />
             <source srcSet={`${old} 1x`} type="image/png" />
             <Ava ref={maxwid} src={png} alt="man" style={{maxWidth: (!burger && !all ) && '370px'}} />
-           </picture>
+        </picture>
             <Box><Churd /><Churd /><Churd /></Box>
         <Oval style={
           {
@@ -28,7 +28,7 @@ export const Avatar = ({media}) => {
           }} css={oval} />
         <RotateSix css={rotate} />
         {!hover && <Logo />}
-            </div>
+      </div>
     );
 
 };

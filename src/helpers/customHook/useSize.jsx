@@ -1,14 +1,14 @@
-import * as React from 'react'
 import useResizeObserver from '@react-hook/resize-observer'
+import { useState, useLayoutEffect } from 'react';
 
 export const useSize = (target) => {
-    const [size, setSize] = React.useState()
+    const [size, setSize] = useState();
 
-    React.useLayoutEffect(() => {
+    useLayoutEffect(() => { //Визиваєм useLayoutEffect для заміру  розміру нашого елемента,до того як браузер перемалює його
         setSize(target.current.getBoundingClientRect())
-    }, [target])
+    }, [target]);
 
-    // Where the magic happens
-    useResizeObserver(target, (entry) => setSize(entry.contentRect))
-    return size;
+    useResizeObserver(target, (entry) => setSize(entry.contentRect));  //записуєм зміни (слідкуєм)
+    
+    return size;  
 };
