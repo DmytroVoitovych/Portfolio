@@ -7,6 +7,7 @@ import { usePrevious } from 'react-delta';
 export const Info = memo(({ length, media }) => {
   const [hover, setHover] = useState(false);
   const [infokey, setInfo] = useState(false); // для примусового перерендеру
+
   const { all, burger, tablet, isMobile, desctop } = media;
   const [ind, setInd] = useState(null);
   const prev = usePrevious(ind);
@@ -114,7 +115,6 @@ export const Info = memo(({ length, media }) => {
             {desc}
           </p>
           <button
-            key={info} //костыль
             data={index}
             style={{ fontSize: isMobile && '16px', padding: '12px 32px' }}
             onClick={e => {
