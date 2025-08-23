@@ -89,7 +89,7 @@ border-radius: 5px;
 transition: color ${cubik}, border ${cubik}, background-color ${cubik} ;
 
 :hover,
-:focus {
+:focus-visible {
 color:${accent_dark__yellow};
 background-color: ${main_dark__white};
 border: 2px solid ${main_dark__yellowBd};
@@ -115,7 +115,7 @@ cursor: pointer;
 
 
 :hover,
-:focus {
+:focus-visible {
 color:${accent_dark__yellow};
 border: 2px solid ${main_dark__yellowBd};
 
@@ -123,7 +123,7 @@ border: 2px solid ${main_dark__yellowBd};
 
 :active{
  color:${main_dark__white};
-border: 2px solid ${second_dark__whiteBd};   
+border: 2px solid ${second_dark__whiteBd};
 }
 `;
 
@@ -138,24 +138,24 @@ font-size:  17px;
 
 export const tabletHero = css`
 
-   
+
     align-items: center;
     gap: 15px;
     padding-top: 0;
 
 picture img{
-max-width: 370px;    
+max-width: 370px;
 }
 
 .css-1tmajv6-oval{
- top: -60px;   
+ top: -60px;
 }
 
 button{
- font-size:18px;   
+ font-size:18px;
 }
 a{
- font-size:18px;   
+ font-size:18px;
 }
 
 `;

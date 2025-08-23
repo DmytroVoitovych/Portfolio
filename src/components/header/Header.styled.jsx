@@ -5,7 +5,7 @@ const { accent_dark__yellow, main_dark__white, support_dark__black, second_dark_
 const { decor_dark__transparentBg, support_dark__yellovOpacityBg } = colorsBackgroundDark;
 const {main_dark__yellowBd, second_dark__whiteBd} = colorsBorderDark;
 
-export const Nav = styled.nav`  
+export const Nav = styled.nav`
 
 display: flex;
 justify-content: space-between;
@@ -31,11 +31,11 @@ li:nth-of-type(3) svg{
     border-radius: inherit;
     color: ${support_dark__black};
     outline: 1px solid ${accent_dark__yellow};
- }   
+ }
 
  li:nth-of-type(2) svg{
     color: ${accent_dark__yellow};
- } 
+ }
 `;
 
 export const LinkContact = styled.a`
@@ -48,11 +48,11 @@ transition: background-color ${cubik}, outline ${cubik};
 :hover
 {
  background-color: ${second_dark__grey};
-  outline: 3px solid ${main_dark__yellowBd};    
+  outline: 3px solid ${main_dark__yellowBd};
 }
 
 :hover  div{
- outline: 3px solid ${main_dark__yellowBd};  
+ outline: 3px solid ${main_dark__yellowBd};
 }
 
 `;
@@ -65,13 +65,13 @@ align-items: center;
 a:hover p{
  transition: color ${cubik},text-decoration ${cubik};
  color:${accent_dark__yellow};
- text-decoration: underline;   
+ text-decoration: underline;
 }
 
 a:focus  p{
  transition: color ${cubik},text-decoration ${cubik};
  color:${accent_dark__yellow};
- text-decoration: underline;   
+ text-decoration: underline;
 }
 `;
 
@@ -89,14 +89,14 @@ cursor: pointer;
 transition: color ${cubik}, border ${cubik};
 
 :hover,
-:focus {
+:focus-visible {
 color:${main_dark__white};
 border: 2px solid ${second_dark__whiteBd};
 transition: color ${cubik}, border ${cubik};
 
 :active{
 color:${accent_dark__yellow};
-border: 2px solid ${main_dark__yellowBd};    
+border: 2px solid ${main_dark__yellowBd};
 }
 }
 `;
@@ -108,7 +108,7 @@ z-index: 9999;
 cursor: pointer;
 
 :active{
- fill: ${main_dark__white};  
+ fill: ${main_dark__white};
 }
 `;
 

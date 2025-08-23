@@ -69,7 +69,7 @@ export const InfoBox = styled.ul`
       transition: 250ms cubic-bezier(0.36, 0.97, 0.76, 0.18);
 
       :hover,
-      :focus {
+      :focus-visible {
         outline: 1px solid #fbff22;
         color: #fbff22;
         background-color: rgba(153, 153, 153, 0.3);
@@ -134,7 +134,7 @@ export const See = styled.button`
   cursor: pointer;
 
   :hover,
-  :focus {
+  :focus-visible {
     outline: 1px solid #fbff22;
     color: #fbff22;
     background-color: rgba(153, 153, 153, 0.3);
