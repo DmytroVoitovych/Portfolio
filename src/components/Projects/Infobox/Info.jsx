@@ -90,6 +90,7 @@ export const Info = memo(({ length, media }) => {
               id={index}
               autoPlay
               muted
+              preload="metadata"
               loop
               src={video}
               itemType="video/mp4"
