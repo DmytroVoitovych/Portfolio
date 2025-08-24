@@ -1,7 +1,7 @@
 # 🚀 Dmytro Voitovych's Digital Playground
 
 <div align="center">
-  <img src="https://drive.google.com/file/d/1CazVzFP2DX9nyfI2Zdr9frRYDqgSkhLC/view?usp=drive_link" alt="Dmytro Voitovych" style="border-radius: 50%;">
+  <img src="https://res.cloudinary.com/drxmnepxb/image/upload/v1756030739/IMG_20230319_134806_1_tsxf7d_c_fill_w_375_h_500_ar_3_4_lczlzo.jpg" alt="Dmytro Voitovych" style="border-radius: 50%;">
   
   **Frontend Wizard | Problem Solver Extraordinaire | Code Artisan**
   
